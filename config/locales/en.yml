@@ -14,8 +14,9 @@ en:
   header:
     nav:
       home: "Home"
-      about_us: "Service"
-      service: "Product"
+      about_us: "About Us"
+      service: "Service"
+      product: "Product"
       project: "Project"
       blog: "Blog"
       recruitment: "Career"
@@ -23,13 +24,13 @@ en:
   #--
   share: "Share"
   tags: "Tags"
-  
+
   career: "CAREER"
   # blog: "BLOG"
   home_about: "ABOUT US (HOME PAGE)"
   # service: "PRODUCT"
   # about_us: "SERVICE"
-  
+
   erp:
     # Frontend
     saoee:
@@ -42,7 +43,7 @@ en:
           index:
             service: "Product"
             our_services_title: "Our products"
-            our_services_title_sub: "Can we help you?" 
+            our_services_title_sub: "Can we help you?"
           detail:
             service: "Product"
             no_matching_records_found: "Updating..."
@@ -79,6 +80,15 @@ en:
             contact_us: "Contact Us"
             success: "Your message has been sent successfully."
             error: "Error! Your message has not been sent. Please check and try again."
+            form_title: "Please contact us for advice on the most suitable solution."
+            contact_form:
+              placeholder_name: "Full name"
+              placeholder_email: "Email address"
+              placeholder_phone: "Phone number"
+              placeholder_company: "Organization name"
+              message: "Message"
+              placeholder_message: "Please leave a message..."
+              send_message: "Send Message"
         modules:
           home:
             about_us:
@@ -139,7 +149,7 @@ en:
             blog: "Blog"
             recruiting: "Recruiting"
             contact_us: "Contact Us"
-    
+
     # Backend Decorator
     banners:
       backend:

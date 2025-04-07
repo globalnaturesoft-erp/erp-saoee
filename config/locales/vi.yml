@@ -15,7 +15,7 @@ vi:
   header:
     nav:
       home: "Trang chủ"
-      about_us: "Dịch vụ"
+      about_us: "Về chúng tôi"
       service: "Dịch vụ"
       product: "Sản phẩm"
       project: "Dự án"
@@ -96,6 +96,15 @@ vi:
             contact_us: "Liên hệ & Góp ý"
             success: "Yêu cầu của bạn đã được gửi thành công."
             error: "Lỗi! Yêu cầu của bạn chưa được gửi. Vui lòng kiểm tra và thử lại."
+            form_title: "Hãy liên hệ với chúng tôi để được tư vấn giải pháp phù hợp nhất."
+            contact_form:
+              placeholder_name: "Họ và tên"
+              placeholder_email: "Địa chỉ email"
+              placeholder_phone: "Số điện thọai"
+              placeholder_company: "Tên tổ chức"
+              message: "Lời nhắn"
+              placeholder_message: "Vui lòng để lại lời nhắn..."
+              send_message: "Gửi tin nhắn"
         modules:
           home:
             about_us:

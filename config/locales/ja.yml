@@ -16,7 +16,8 @@ ja:
     nav:
       home: "ホームページ"
       about_us: "サービス"
-      service: "製品"
+      service: "サービス"
+      product: "製品"
       project: "プロジェクト"
       blog: "ニュース"
       recruitment: "募集"
@@ -24,13 +25,13 @@ ja:
   #--
   share: "Share"
   tags: "Tags"
-  
+
   career: "CAREER"
   # blog: "BLOG"
   home_about: "ABOUT US (HOME PAGE)"
   # service: "PRODUCT"
   # about_us: "SERVICE"
-  
+
   erp:
     # Frontend
     saoee:
@@ -43,7 +44,7 @@ ja:
           index:
             service: "製品"
             our_services_title: "当社の製品"
-            our_services_title_sub: "お手伝いしましょうか？" 
+            our_services_title_sub: "お手伝いしましょうか？"
           detail:
             service: "製品"
             no_matching_records_found: "Nội dung đang được cập nhật"
@@ -87,6 +88,15 @@ ja:
             contact_us: "関連会社"
             success: "Yêu cầu của bạn đã được gửi thành công."
             error: "Lỗi! Yêu cầu của bạn chưa được gửi. Vui lòng kiểm tra và thử lại."
+            form_title: "最適なソリューションについてアドバイスを得るために、お気軽にお問い合わせください。"
+            contact_form:
+              placeholder_name: "名前"
+              placeholder_email: "電子メールアドレス"
+              placeholder_phone: "電話番号"
+              placeholder_company: "会社名"
+              message: "メッセージ"
+              placeholder_message: "メッセージを残してください..."
+              send_message: "メッセージを送ります。"
         modules:
           home:
             about_us:
@@ -146,7 +156,7 @@ ja:
             blog: "ニュース"
             recruiting: "募集"
             contact_us: "連絡先"
-    
+
     # Backend Decorator
     banners:
       backend:

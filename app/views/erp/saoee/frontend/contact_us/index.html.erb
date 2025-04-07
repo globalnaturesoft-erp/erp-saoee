@@ -31,35 +31,35 @@
     <div class="container py-5">
         <div class="row">
             <div class="col-12 col-sm-12 col-md-12 col-lg-4 mb-4">
-                <h2>Hãy liên hệ với chúng tôi để được tư vấn giải pháp phù hợp nhất!</h2>
+                <h2><%= t('erp.saoee.frontend.contact_us.index.form_title') %></h2>
             </div>
             <div class="col-12 col-sm-12 col-md-12 col-lg-8">
                 <form action="#">
                     <div class="row mb-3">
                         <div class="col">
-                            <label for="formGroupExampleInput" class="form-label">Họ và tên</label>
-                            <input type="text" class="form-control" placeholder="Họ và tên" aria-label="Họ và tên">
+                            <label for="formGroupExampleInput" class="form-label"><%= t('erp.saoee.frontend.contact_us.index.contact_form.placeholder_name') %></label>
+                            <input type="text" class="form-control" placeholder="<%= t('erp.saoee.frontend.contact_us.index.contact_form.placeholder_name') %>" aria-label="<%= t('erp.saoee.frontend.contact_us.index.contact_form.placeholder_name') %>">
                         </div>
                         <div class="col">
-                            <label for="formGroupExampleInput" class="form-label">Công ty/Tổ chức/Cá nhân</label>
-                            <input type="text" class="form-control" placeholder="Tên công ty" aria-label="Tên công ty">
+                            <label for="formGroupExampleInput" class="form-label"><%= t('erp.saoee.frontend.contact_us.index.contact_form.placeholder_company') %></label>
+                            <input type="text" class="form-control" placeholder="<%= t('erp.saoee.frontend.contact_us.index.contact_form.placeholder_company') %>" aria-label="<%= t('erp.saoee.frontend.contact_us.index.contact_form.placeholder_company') %>">
                         </div>
                     </div>
                     <div class="row mb-3">
                         <div class="col">
-                            <label for="formGroupExampleInput" class="form-label">Email</label>
-                            <input type="text" class="form-control" placeholder="Địa chỉ email" aria-label="Địa chỉ email">
+                            <label for="formGroupExampleInput" class="form-label"><%= t('erp.saoee.frontend.contact_us.index.contact_form.placeholder_email') %></label>
+                            <input type="text" class="form-control" placeholder="<%= t('erp.saoee.frontend.contact_us.index.contact_form.placeholder_email') %>" aria-label="<%= t('erp.saoee.frontend.contact_us.index.contact_form.placeholder_email') %>">
                         </div>
                         <div class="col">
-                            <label for="formGroupExampleInput" class="form-label">Số điện thoại</label>
-                            <input type="text" class="form-control" placeholder="09xx" aria-label="09xx">
+                            <label for="formGroupExampleInput" class="form-label"><%= t('erp.saoee.frontend.contact_us.index.contact_form.placeholder_phone') %></label>
+                            <input type="text" class="form-control" placeholder="<%= t('erp.saoee.frontend.contact_us.index.contact_form.placeholder_phone') %>" aria-label="<%= t('erp.saoee.frontend.contact_us.index.contact_form.placeholder_phone') %>">
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label for="exampleFormControlTextarea1" class="form-label">Lời nhắn</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="7" placeholder="Vui lòng để lại lời nhắn"></textarea>
+                        <label for="exampleFormControlTextarea1" class="form-label"><%= t('erp.saoee.frontend.contact_us.index.contact_form.message') %></label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="7" placeholder="<%= t('erp.saoee.frontend.contact_us.index.contact_form.placeholder_message') %>"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary float-end">Gửi tin nhắn <i class="fa-solid fa-arrow-right fa-fw"></i></button>
+                    <button type="submit" class="btn btn-primary float-end"><%= t('erp.saoee.frontend.contact_us.index.contact_form.send_message') %> <i class="fa-solid fa-arrow-right fa-fw"></i></button>
                 </form>
             </div>
         </div>
