@@ -30,6 +30,9 @@ en:
   home_about: "ABOUT US (HOME PAGE)"
   # service: "PRODUCT"
   # about_us: "SERVICE"
+  see_more: "See more"
+  see_all: "See all"
+  detail: "View detail"
 
   erp:
     # Frontend
@@ -92,7 +95,7 @@ en:
         modules:
           home:
             about_us:
-              media_img_desc: "Architects with years of experience"
+              title: "Story of SAO-EE"
             newest_blog:
               blog_title_sub: "newest blog"
               blog_title: "NEWS"

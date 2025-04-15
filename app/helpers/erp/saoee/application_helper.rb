@@ -64,6 +64,32 @@ module Erp
           thumb.present? ? thumb : url_for('/frontend/images/noimage/80_80.png')
         end
       end
+
+      # article name by locale
+      # @param article [Article] the article object
+      # @return [String] the article name in the current locale
+      def article_name(article)
+        if I18n.locale == :vi
+          article.name
+        elsif I18n.locale == :en
+          article.en_name
+        elsif I18n.locale == :ja
+          article.ja_name
+        end
+      end
+
+      # article content by locale
+      # @param article [Article] the article object
+      # @return [String] the article content in the current locale
+      def article_content(article)
+        if I18n.locale == :vi
+          article.content
+        elsif I18n.locale == :en
+          article.en_content
+        elsif I18n.locale == :ja
+          article.ja_content
+        end
+      end
     end
   end
 end

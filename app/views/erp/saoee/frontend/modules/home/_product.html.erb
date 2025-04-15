@@ -49,14 +49,14 @@
                                 <%= short_text(display_product_desc, 10) %>...
                             </p>
                             </div>
-                            <a href="<%= product_link(product) %>" class="see-more">chi tiết</a>
+                            <a href="<%= product_link(product) %>" class="see-more"><%= t('detail') %></a>
                         </div>
                     </div>
                 <% end %>
                 </div>
                 <a href="<%= erp_saoee.product_path %>">
                 <div class="call-action d-flex justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-start product__more">
-                    <span>Xem tất cả</span>
+                    <span><%= t('see_all') %></span>
                     <div class="icon-32 icon-black-6 d-flex justify-content-center align-items-center">
                     <i class="fa-solid fa-arrow-right"></i>
                     </div>

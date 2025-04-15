@@ -48,7 +48,7 @@
                 <ul class="dropdown-menu shadow-sm">
                     <% @services.each do |service| %>
                         <li class="dropdown-item">
-                            <%= link_to service.name, service_link(service), class: 'text-uppercase' %>
+                            <%= link_to article_name(service), service_link(service), class: 'text-uppercase' %>
                         </li>
                     <% end %>
                 </ul>
@@ -62,7 +62,7 @@
                 <ul class="dropdown-menu shadow-sm">
                     <% @products.each do |product| %>
                         <li class="dropdown-item">
-                            <%= link_to product.name, product_link(product), class: 'text-uppercase' %>
+                            <%= link_to article_name(product), product_link(product), class: 'text-uppercase' %>
                         </li>
                     <% end %>
                 </ul>

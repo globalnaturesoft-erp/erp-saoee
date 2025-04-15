@@ -31,6 +31,9 @@ vi:
   home_about: "GIỚI THIỆU (HOME PAGE)"
   # service: "SẢN PHẨM"
   # about_us: "DỊCH VỤ"
+  see_more: "Xem thêm"
+  see_all: "Xem tất cả"
+  detail: "Chi tiết"
 
   erp:
     # Frontend
@@ -108,7 +111,7 @@ vi:
         modules:
           home:
             about_us:
-              media_img_desc: "Đội ngũ kiến trúc sư giàu kinh nghiệm"
+              title: "Câu chuyện"
             newest_blog:
               blog_title_sub: "Tin tức mới nhất"
               blog_title: "BÀI VIẾT"
