@@ -28,7 +28,7 @@
             </nav>
             <div class="d-flex flex-column gap-4 flex-grow-0 w-100">
                 <h2 class="fs-5 text-capitalize d-inline-block w-fit-content fw-bold company__name">
-                    Công ty Cổ phần Tư vấn Thiết kế SAO
+                    <%= t('saoee_info.saoee_name') %>
                 </h2>
                 <div class="d-flex flex-row flex-lg-column gap-2 flex-wrap flex-lg-nowrap w-100 w-lg-300 justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-start gap-14">
                     <div class="d-flex flex-column flex-sm-column flex-md-column flex-lg-row gap-2 align-items-center w-100 w-lg-auto">
@@ -36,8 +36,7 @@
                             <img src="/frontend/images/icon_add_location.png" alt="">
                         </div>
                         <p class="footer__text">
-                            L17-11, Vincom Center Buildings, 72 Lê Thánh Tôn, P. Bến Nghé, Quận 1, TP. Hồ Chí
-                            Minh, Việt Nam
+                            <%= t('saoee_info.address_info') %>
                         </p>
                     </div>
                     <div class="d-flex gap-2 flex-column flex-sm-column flex-md-column flex-lg-row align-items-center">
@@ -61,7 +60,7 @@
                             <img src="/frontend/images/icon_margin.png" alt="">
                         </div>
                         <p class="footer__text">
-                            MST: 0313639154
+                            <%= t('saoee_info.tax_code') %>: 0313639154
                         </p>
                     </div>
                 </div>
@@ -71,6 +70,6 @@
     <div class="footer__line">
     </div>
     <div class="bg-black text-center fs-6 fw-medium text-white py-3">
-        <p class="mb-0">Copyright © 2024 SAO-EE.All Rights Reserved.</p>
+        <p class="mb-0"><%= t('footer.copyright') %></p>
     </div>
 </footer>

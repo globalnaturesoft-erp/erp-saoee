@@ -13,6 +13,13 @@ ja:
   japanese: "日本語"
   vi_content: "Content of Vietnamese"
   en_content: "Content of English"
+  saoee_info:
+    saoee_name: "SAO-EE 設計・コンサルティング株式会社"
+    address: "住所"
+    address_info: "17階-11号室, Vincom センタービル.72番 , レー・タン・トン通り , ベンゲー坊 , 1区 , ホーチミン市  , ベトナム"
+    phone: "電話"
+    email: "Eメール"
+    tax_code: "税コード"
   header:
     nav:
       home: "ホームページ"
@@ -23,6 +30,8 @@ ja:
       blog: "ニュース"
       recruitment: "募集"
       contact_us: "関連会社"
+  footer:
+    copyright: "著作権 © 2025 SAO-EE. 無断転載を禁じます。"
   #--
   share: "共有する"
   tags: "タグ"

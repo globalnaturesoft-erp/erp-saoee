@@ -12,6 +12,13 @@ en:
   english: "English"
   vi_content: "Content of Vietnamese"
   en_content: "Content of English"
+  saoee_info:
+    saoee_name: "SAO-EE Design and Consulting Joint Stock Company"
+    address: "Address"
+    address_info: "L17-11, Vincom Center Buildings, 72 Le Thanh Ton, Ben Nghe Ward, District 1, Ho Chi Minh City, Vietnam"
+    phone: "Phone"
+    email: "Email"
+    tax_code: "Tax code"
   header:
     nav:
       home: "Home"
@@ -22,6 +29,8 @@ en:
       blog: "Blog"
       recruitment: "Career"
       contact_us: "Contact"
+  footer:
+    copyright: "Copyright © 2025 SAO-EE. All rights reserved."
   #--
   share: "Share"
   tags: "Tags"

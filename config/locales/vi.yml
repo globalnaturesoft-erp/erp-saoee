@@ -12,6 +12,13 @@ vi:
   english: "English"
   vi_content: "Nội dung tiếng Việt"
   en_content: "English Content"
+  saoee_info:
+    saoee_name: "Công ty Cổ phần Tư vấn Thiết kế SAO"
+    address: "Địa chỉ"
+    address_info: "L17-11, Vincom Center Buildings, 72 Lê Thánh Tôn, P. Bến Nghé, Quận 1, TP. Hồ Chí Minh, Việt Nam"
+    phone: "Điên thoại"
+    email: "Email"
+    tax_code: "MST"
   header:
     nav:
       home: "Trang chủ"
@@ -22,6 +29,8 @@ vi:
       blog: "Tin tức"
       recruitment: "Tuyển dụng"
       contact_us: "Liên hệ"
+  footer:
+    copyright: "Copyright © 2025 SAO-EE.All Rights Reserved."
   #--
   share: "Chia sẻ"
   tags: "Từ khóa"
