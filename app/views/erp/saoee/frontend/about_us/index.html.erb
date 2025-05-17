@@ -1,42 +1,160 @@
-<% title t('.about_us') %>
-<!-- PAGE HEADING-->
-<section class="section breadcrumb p-t-65 p-b-35">
-    <div class="container">
-        <div class="page-heading">
-            <h2 class="title-2"><%= t('.about_us') %></h2>
-            <h4 class="title-sub title-sub--c8 m-b-15">
-                <%= link_to t('home'), erp_saoee.root_path %> <i class="ti-angle-double-right"></i>
-                <%= t('about_us') %>
-            </h4>
+<% about_name = article_name(@about) %>
+<% title about_name %>
+<% full_domain_path = request.env['rack.url_scheme'] + '://' + request.host_with_port %>
+
+<% content_for :page_style do %>
+    <link rel="stylesheet" href="/frontend/css/blog.css" />
+<% end %>
+
+<% content_for :metas do %>
+
+    <!-- Facebook Open Graph -->
+    <meta property="og:url" content="<%= request.url %>"/>
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="<%= about_name %>"/>
+    <% if @meta_description.present? %>
+    <meta property="og:description" content="<%= @meta_description %>"/>
+    <% else %>
+    <meta property="og:description" content="<%= about_name %>"/>
+    <% end %>
+    <meta property="og:site_name" content="SAO-EE.VN">
+    <meta property="og:image" content="<%= full_domain_path %><%= @about.image %>" />
+    <meta property="og:locale" content="<%= (I18n.locale == :vi) ? 'vi_VN' : 'en_US' %>">
+
+    <!-- Google+ Open Graph -->
+    <meta itemprop="name" content="<%= about_name %>">
+    <% if @meta_description.present? %>
+    <meta itemprop="description" content="<%= @meta_description %>">
+    <% else %>
+    <meta itemprop="description" content="<%= about_name %>">
+    <% end %>
+    <meta itemprop="image" content="<%= full_domain_path %><%= @about.image %>">
+
+    <!-- Twitter Open Graph -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@SAOEE">
+    <meta name="twitter:title" content="<%= about_name %>">
+    <% if @meta_description.present? %>
+    <meta name="twitter:description" content="<%= @meta_description %>"/>
+    <% else %>
+    <meta name="twitter:description" content="<%= about_name %>"/>
+    <% end %>
+    <meta name="twitter:image" content="<%= full_domain_path %><%= @about.image %>">
+<% end %>
+
+<% content_for :page_style do %>
+    <link rel="stylesheet" href="/frontend/css/service.css" />
+<% end %>
+
+<% title t('service') %>
+
+<!-- PAGE HEADING -->
+<section class="section__banner">
+    <div class="banner__container container-fluid px-0">
+        <div class="banner__image z-0">
+            <img src="/frontend/images/559232c82f593cf41c58c9ef18708702.jpg" alt="">
+        </div>
+        <div class="banner__container container container--primary d-flex align-items-center">
+            <h1 class="banner__title fw-bold text-white text-capitalize">
+                <%= t('.service') %>
+            </h1>
+        </div>
+    </div>
+    <div class="banner__nav container-fluid">
+        <div class="nav__container container container--primary d-flex align-items-center text-black-4 fs-6 h-100">
+            <i class="fa-solid fa-house"></i>
+            <i class="fa-solid fa-angle-right"></i>
+            <span class="text-red fw-semibold text-uppercase"><%= t('.service') %></span>
         </div>
     </div>
 </section>
-<!-- END PAGE HEADING-->
+<!-- END PAGE HEADING -->
 
-<!-- ABOUT US-->
-<section class="section p-t-20">
-    <div class="container">
-        <div class="row no-gutters">
-            <div class="col-lg-12">
-                <% if @about.present? %>
-                    <div class="text--s16-40 m-b-15 text-justify">
-                        <% if I18n.locale == :vi %>
-                            <%= @about.content.present? ? @about.content.html_safe : 'Đang cập nhật...' %>
-                        <% elsif I18n.locale == :en %>
-                            <%= @about.en_content.present? ? @about.en_content.html_safe : 'Updating...' %>
-                        <% elsif I18n.locale == :ja %>
-                            <%= @about.ja_content.present? ? @about.ja_content.html_safe : 'Updating...' %>
-                        <% end %>
+<!-- SERVICE -->
+<% @services.each.with_index(1) do |service, index| %>
+    <%
+        if I18n.locale == :en
+            service_name = service.en_name
+            service_content = service.en_content
+        elsif I18n.locale == :ja
+            service_name = service.ja_name
+            service_content = service.ja_content
+        else
+            service_name = service.name
+            service_content = service.content
+        end
+    %>
+    <% if index.odd? %>
+        <section class="section__assessment-solution--wind sub2 py-5 py-lg-mx bg-black-7 z0">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 px-2">
+                        <div class="d-flex flex-column gap-1">
+                            <h2 class="section__title--2 mt-0 text-start px-0">
+                                <%= service_name %>
+                            </h2>
+                        </div>
                     </div>
-                <% else %>
-                    <div class="alert alert-warning">
-                        <i class="fa fa-warning"></i> <%= t('.no_matching_records_found') %>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 px-2">
+                        <p class="section__text--1">
+                            <%= short_text(service_content, 60) %>...
+                        </p>
+                        <a href="<%= service_link(service) %>">
+                            <div
+                                class="call-action d-flex justify-content-center justify-content-lg-start mt-5">
+                                <span><%= t('detail') %></span>
+                                <div
+                                    class="icon-32 icon-red d-flex justify-content-center align-items-center">
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                <% end %>
+                </div>
             </div>
+        </section>
+    <% else %>
+        <section class="section__thermal-comfort glbgv2 py-5 py-lg-mx bg-black-7 z0">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 px-2">
+                        <p class="section__text--1">
+                            <%= short_text(service_content, 60) %>...
+                        </p>
+                        <a href="<%= service_link(service) %>">
+                            <div
+                                class="call-action d-flex justify-content-center justify-content-lg-start mt-5">
+                                <span><%= t('detail') %></span>
+                                <div
+                                    class="icon-32 icon-red d-flex justify-content-center align-items-center">
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 px-2">
+                        <div class="d-flex flex-column gap-1">
+                            <h2 class="section__title--2 mt-0 text-end px-0">
+                                <%= service_name %>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <% end %>
+<% end %>
+<!-- END SERVICE -->
+
+<!-- CONTACT LINK -->
+<section class="section__contact">
+    <div class="contact__container container h-100">
+        <div class="contact__wrapper">
+            <h2 class="contact__slogan">
+                Cần tư vấn, hãy liên hệ chúng tôi.
+            </h2>
+            <a href="<%= erp_saoee.contact_us_path %>" class="btn-contact flex-grow-0 mt-3 mt-lg-0">Liên hệ</a>
         </div>
     </div>
 </section>
-<!-- END ABOUT US-->
-
-<%= render "erp/saoee/frontend/modules/about_us/team_leaders" if false %>
+<!-- END CONTACT LINK -->

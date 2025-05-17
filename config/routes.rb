@@ -2,7 +2,7 @@ Erp::Saoee::Engine.routes.draw do
   scope "(:locale)", locale: /en|ja|vi/ do
     root to: "frontend/home#index"
 
-    get "gioi-thieu" => "frontend/about_us#index", as: :about_us
+    get "story" => "frontend/about_us#index", as: :about_us
 
     get "san-pham" => "frontend/product#index", as: :product
     get "san-pham/:title-prd:product_id" => "frontend/product#detail", as: :product_detail

@@ -5,37 +5,29 @@
         <div class="row align-items-center py-0 py-sm-0 py-md-0 py-lg-5">
         <div class="col-12 col-sm-12 col-md-12 col-lg-6 power__content">
             <div class="d-flex flex-column align-items-center align-items-sm-center align-items-md-center align-items-lg-start">
-            <h2 class="section__heading">
-                <%= t('.title') %>
-            </h2>
-            <h3 class="section__title--1 text-center text-sm-center text-md-center text-lg-start">
-                <%= article_name(@home_about) %>
-            </h3>
+                <h2 class="section__heading">
+                    <%= t('.title') %>
+                </h2>
+                <h3 class="section__title--1 text-center text-sm-center text-md-center text-lg-start">
+                    <%= article_name(@home_about) %>
+                </h3>
             </div>
-            <div class="mt-lg-5 mt-1 pe-lg-mx">
-            <div class="text-desc power__desc text-justify pb-2">
-                <% content = @home_about.content %>
-                <% if I18n.locale == :vi %>
-                    <% content = @home_about.content %>
-                <% elsif I18n.locale == :en and @home_about.en_content.present? %>
-                    <% content = @home_about.en_content %>
-                <% elsif I18n.locale == :ja and @home_about.ja_content.present? %>
-                    <% content = @home_about.ja_content %>
-                <% end %>
-                <%= short_text(content, 120) %>...
-            </div>
-            <a href="#">
-                <div class="call-action d-flex justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-start">
-                <span><%= t('see_more') %></span>
-                <div class="icon-32 icon-red d-flex justify-content-center align-items-center">
-                    <i class="fa-solid fa-arrow-right"></i>
+            <div class="mt-lg-4 mt-1 pe-lg-mx">
+                <div class="power__desc text-justify">
+                    <%= short_text(article_content(@home_about), 200) %>...
                 </div>
-                </div>
-            </a>
+                <a href="<%= erp_saoee.about_us_path %>">
+                    <div class="call-action d-flex justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-start mt-2 mt-sm-2 mt-md-2 mt-lg-4">
+                    <span><%= t('see_more') %></span>
+                    <div class="icon-32 icon-red d-flex justify-content-center align-items-center">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                    </div>
+                </a>
             </div>
         </div>
         <div class="col-12 col-sm-12 col-md-12 col-lg-6 power__poster">
-            <img class="d-block d-sm-block d-md-block d-lg-none" src="/frontend/images/power.png" alt="Câu chuyện năng lượng">
+            <img class="d-block d-sm-block d-md-block d-lg-none" src="/frontend/images/power.png" alt="<%= article_name(@home_about) %>">
         </div>
         </div>
     </div>

@@ -59,7 +59,7 @@
             <% end %>
         </div>
         <% if @projects.count > 2 %>
-            <nav class="d-flex justify-content-center float-none float-sm-none float-md-none float-lg-end">
+            <nav class="d-flex justify-content-center float-none float-sm-none float-md-none float-lg-center">
                 <%= will_paginate @projects, previous_label: '<span aria-hidden="true"><i class="fa-solid fa-arrow-left fa-fw"></i></span>', next_label: '<span aria-hidden="true"><i class="fa-solid fa-arrow-right fa-fw"></i></span>', renderer: BootstrapPagination::Rails, class: 'pagination', link_options: { class: "page-link" } %>
             </nav>
         <% end %>

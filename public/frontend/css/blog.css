@@ -17,6 +17,14 @@
     margin-bottom: 1.5em;
 }
 
+.bbox .ptitle > p {
+    display: -webkit-box;
+	-webkit-line-clamp: 10;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
 .bbox .pimg span {
     content: '';
     padding: 5px 10px;
@@ -77,7 +85,7 @@
     font-size: 24px;
     font-weight: bold;
 }
- 
+
 .blog-detail-content p:empty {
     display: block;
     height: 2rem;

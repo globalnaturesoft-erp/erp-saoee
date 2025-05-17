@@ -19,7 +19,7 @@
                     </div>
                     <div class="position-absolute bottom-0 start-0 p-4">
                         <h3 class="carousel__title fs-5 fw-bold text-white">
-                            <%= link_to project.name, project_link(project), class: "text-white" %>
+                            <%= link_to project_name(project), project_link(project), class: "text-white" %>
                         </h3>
                         <p class="carousel__address text-white fw-medium">
                             <%= project.location %>
@@ -32,7 +32,7 @@
         <a href="<%= erp_saoee.project_path %>"
             class="d-block mt-5 mt-sm-5 mt-md-5 mt-lg-0 pt-5 pt-sm-5 pt-md-5 pt-lg-0">
         <div class="call-action d-flex justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-start mt-4">
-            <span>Xem tất cả</span>
+            <span><%= t('see_all') %></span>
             <div class="icon-32 icon-black-6 d-flex justify-content-center align-items-center">
             <i class="fa-solid fa-arrow-right"></i>
             </div>

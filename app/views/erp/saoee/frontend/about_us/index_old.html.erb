@@ -1,0 +1,42 @@
+<% title t('.about_us') %>
+<!-- PAGE HEADING-->
+<section class="section breadcrumb p-t-65 p-b-35">
+    <div class="container">
+        <div class="page-heading">
+            <h2 class="title-2"><%= t('.about_us') %></h2>
+            <h4 class="title-sub title-sub--c8 m-b-15">
+                <%= link_to t('home'), erp_saoee.root_path %> <i class="ti-angle-double-right"></i>
+                <%= t('about_us') %>
+            </h4>
+        </div>
+    </div>
+</section>
+<!-- END PAGE HEADING-->
+
+<!-- ABOUT US-->
+<section class="section p-t-20">
+    <div class="container">
+        <div class="row no-gutters">
+            <div class="col-lg-12">
+                <% if @about.present? %>
+                    <div class="text--s16-40 m-b-15 text-justify">
+                        <% if I18n.locale == :vi %>
+                            <%= @about.content.present? ? @about.content.html_safe : 'Đang cập nhật...' %>
+                        <% elsif I18n.locale == :en %>
+                            <%= @about.en_content.present? ? @about.en_content.html_safe : 'Updating...' %>
+                        <% elsif I18n.locale == :ja %>
+                            <%= @about.ja_content.present? ? @about.ja_content.html_safe : 'Updating...' %>
+                        <% end %>
+                    </div>
+                <% else %>
+                    <div class="alert alert-warning">
+                        <i class="fa fa-warning"></i> <%= t('.no_matching_records_found') %>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END ABOUT US-->
+
+<%= render "erp/saoee/frontend/modules/about_us/team_leaders" if false %>

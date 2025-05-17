@@ -292,6 +292,11 @@ section {
 	padding-bottom: 5em;
 }
 
+.container table td {
+	padding: 5px;
+	border: 1px solid #996;
+}
+
 /* BANNER */
 .section__banner {
 	max-width: 100%;

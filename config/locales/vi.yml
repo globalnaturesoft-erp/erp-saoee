@@ -121,6 +121,9 @@ vi:
             project:
               project_title_sub: "Những dự án chất lượng <br> Là mục tiêu chúng tôi luôn hướng tới"
               project_title: "Dự án nổi bật"
+            product:
+              project_title_sub: "Chúng tôi cung cấp những sản phẩm gì?"
+              project_title: "Sản phẩm"
           blog:
             sidebar:
               tags: "Từ khóa"

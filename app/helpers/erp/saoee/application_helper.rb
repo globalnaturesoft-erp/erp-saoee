@@ -90,6 +90,32 @@ module Erp
           article.ja_content
         end
       end
+
+      # project name by locale
+      # @param project [Project] the project object
+      # @return [String] the project name in the current locale
+      def project_name(project)
+        if I18n.locale == :vi
+          project.name
+        elsif I18n.locale == :en
+          project.en_name
+        elsif I18n.locale == :ja
+          project.ja_name
+        end
+      end
+
+      # project content by locale
+      # @param project [Project] the project object
+      # @return [String] the project content in the current locale
+      def project_content(project)
+        if I18n.locale == :vi
+          project.content
+        elsif I18n.locale == :en
+          project.en_content
+        elsif I18n.locale == :ja
+          project.ja_content
+        end
+      end
     end
   end
 end

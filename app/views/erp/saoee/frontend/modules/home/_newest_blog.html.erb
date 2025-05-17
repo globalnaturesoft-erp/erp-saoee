@@ -7,7 +7,7 @@
         </h3>
         <a href="<%= erp_saoee.blog_path %>" class="d-none d-lg-block">
             <div class="call-action d-flex justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-start">
-            <span>Xem tất cả</span>
+            <span><%= t('see_all') %></span>
             <div class="icon-32 icon-red d-flex justify-content-center align-items-center">
                 <i class="fa-solid fa-arrow-right"></i>
             </div>
@@ -28,12 +28,12 @@
                 %>
                 <div class="post__item col-12 col-sm-12 col-md-12 col-lg-4">
                     <div class="post__image">
-                        <%= link_to image_tag(article_image(blog.image.thumb_357_201, '357_201'), alt: blog_title), blog_link(blog) %>
+                        <%= link_to image_tag(article_image(blog.image.thumb_357_201, '357_201'), alt: article_name(blog)), blog_link(blog) %>
                     </div>
                     <div class="d-flex flex-column gap-14">
-                    <p class="fs-4 fw-medium mb-0"><%= link_to blog_title, blog_link(blog) %></p>
-                    <p class="fs-6 mb-0"><%= short_text(blog.content, 25) %>...</p>
-                    <a href="<%= blog_link(blog) %>" class="see-more w-fit-content">Chi tiết</a>
+                    <p class="fs-4 fw-medium mb-0"><%= link_to article_name(blog), blog_link(blog) %></p>
+                    <p class="post__desc fs-6 mb-0"><%= short_text(article_content(blog), 25) %>...</p>
+                    <a href="<%= blog_link(blog) %>" class="see-more w-fit-content"><%= t('detail') %></a>
                     </div>
                 </div>
             <% end %>

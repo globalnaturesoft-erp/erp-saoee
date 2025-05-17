@@ -53,14 +53,14 @@
                             <div class="ptitle">
                                 <h5><%= blog_name %></h5>
                                 <p><%= short_text(blog_content, 20) %>...</p>
-                                <a href="<%= blog_link(blog) %>" class="see-more">Chi tiết</a>
+                                <a href="<%= blog_link(blog) %>" class="see-more"><%= t('detail') %></a>
                             </div>
                         </div>
                     </div>
                 <% end %>
             </div>
             <% if @blogs.count > 2 %>
-                <nav class="d-flex justify-content-center float-none float-sm-none float-md-none float-lg-end">
+                <nav class="d-flex justify-content-center float-none float-sm-none float-md-none float-lg-center">
                     <%= will_paginate @blogs, previous_label: '<span aria-hidden="true"><i class="fa-solid fa-arrow-left fa-fw"></i></span>', next_label: '<span aria-hidden="true"><i class="fa-solid fa-arrow-right fa-fw"></i></span>', renderer: BootstrapPagination::Rails, class: 'pagination', link_options: { class: "page-link" } %>
                 </nav>
             <% end %>

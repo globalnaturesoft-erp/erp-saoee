@@ -105,6 +105,9 @@ en:
             project:
               project_title_sub: "What is our work?"
               project_title: "PROJECTS"
+            product:
+              project_title_sub: "What products do we provide?"
+              project_title: "Products"
           blog:
             sidebar:
               tags: "Tags"

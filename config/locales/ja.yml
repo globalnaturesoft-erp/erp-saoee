@@ -113,6 +113,9 @@ ja:
             project:
               project_title_sub: "私たちは何をしましたか？"
               project_title: "最近のプロジェクト"
+            product:
+              project_title_sub: "私たちはどのような製品を提供していますか？"
+              project_title: "製品"
           blog:
             sidebar:
               tags: "Từ khóa"
