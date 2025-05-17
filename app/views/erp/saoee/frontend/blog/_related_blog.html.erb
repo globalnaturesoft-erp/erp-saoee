@@ -1,7 +1,7 @@
 <div class="col-12">
     <div class="d-flex align-items-center justify-content-between mt-5">
         <h3 class="section__title--2">
-            Bài viết cùng chủ đề
+            <%= t('.other_blog') %>
         </h3>
         <a href="#" class="d-none d-lg-block">
             <div class="call-action d-flex justify-content-center justify-content-lg-start">
@@ -15,26 +15,14 @@
     <hr>
     <div class="posts__list row gx-5 flex-wrap flex-sm-wrap flex-md-wrap flex-lg-nowrap">
         <% @newest_blogs.each do |post| %>
-            <%
-                if I18n.locale == :en
-                    post_name = post.en_name
-                    post_content = post.en_content
-                elsif I18n.locale == :ja
-                    post_name = post.ja_name
-                    post_content = post.ja_content
-                else
-                    post_name = post.name
-                    post_content = post.content
-                end
-            %>
             <div class="post__item col-12 col-sm-12 col-md-12 col-lg-4">
                 <div class="post__image">
-                    <% (image_tag post.image.thumb_357_201, alt: post_name) %>
+                    <%= (image_tag post.image.thumb_357_201, alt: article_name(post)) %>
                 </div>
                 <div class="d-flex flex-column gap-14">
-                    <p class="fs-4 fw-medium mb-0"><%= post_name %></p>
-                    <p class="fs-6 mb-0"><%= short_text(post_content, 20) %>...</p>
-                    <a href="#" class="see-more w-fit-content">Xem thêm</a>
+                    <p class="fs-4 fw-medium mb-0"><%= article_name(post) %></p>
+                    <p class="fs-6 mb-0"><%= short_text(article_content(post), 20) %>...</p>
+                    <a href="<%= blog_link(post) %>" class="see-more w-fit-content"><%= t('detail') %></a>
                 </div>
             </div>
         <% end %>

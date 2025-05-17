@@ -1,6 +1,6 @@
 vi:
   home: "Trang chủ"
-  about_us: "Dịch vụ"
+  about_us: "Câu chuyện"
   service: "Dịch vụ"
   product: "Sản phẩm"
   project: "Dự án"
@@ -88,6 +88,8 @@ vi:
             newest_blogs: "Bài viết mới nhất"
             categories: "Chủ đề"
             latest_projects: "Dự án gần đây"
+          related_blog:
+            other_blog: "Bài viết liên quan"
         recruitment:
           index:
             recruitment: "Tuyển dụng"
@@ -152,6 +154,9 @@ vi:
               address: "Địa chỉ"
               address_info: "L17-11, Vincom Center Buildings, 72 Lê Thánh Tôn, P. Bến Nghé, Quận 1, TP. Hồ Chí Minh, Việt Nam"
               phone: "Điện thoại"
+          contact_me:
+            contact__slogan: "Cần tư vấn, hãy liên hệ chúng tôi"
+            contact_us: "Liên hệ"
           service:
             sidebar:
               other_services: "Sản phẩm khác"

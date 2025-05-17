@@ -1,7 +1,8 @@
 ja:
   home: "ホームページ"
-  about_us: "サービス"
-  service: "製品"
+  about_us: "物語"
+  service: "サービス"
+  product: "製品"
   project: "プロジェクト"
   blog: "ニュース"
   recruitment: "募集"
@@ -23,8 +24,8 @@ ja:
       recruitment: "募集"
       contact_us: "関連会社"
   #--
-  share: "Share"
-  tags: "Tags"
+  share: "共有する"
+  tags: "タグ"
 
   career: "CAREER"
   # blog: "BLOG"
@@ -45,12 +46,17 @@ ja:
             no_matching_records_found: "Nội dung đang được cập nhật"
         service:
           index:
-            service: "製品"
+            service: "サービス"
             our_services_title: "当社の製品"
             our_services_title_sub: "お手伝いしましょうか？"
           detail:
-            service: "製品"
+            service: "サービス"
             no_matching_records_found: "Nội dung đang được cập nhật"
+        product:
+          index:
+            product: "製品"
+          detail:
+            product: "製品"
         project:
           index:
             project: "プロジェクト"
@@ -70,16 +76,18 @@ ja:
           index:
             blog: "ニュース"
             no_matching_records_found: "Không tìm thấy danh sách bài viết"
-            tags: "Từ khóa"
+            tags: "タグ"
             newest_blogs: "最新の書き込み"
             categories: "テーマ"
             latest_projects: "最近のプロジェクト"
           detail:
             blog: "ニュース"
-            tags: "Từ khóa"
+            tags: "タグ"
             newest_blogs: "最新の書き込み"
             categories: "テーマ"
             latest_projects: "最近のプロジェクト"
+          related_blog:
+            other_blog: "関連ニュース"
         recruitment:
           index:
             recruitment: "募集"
@@ -118,7 +126,7 @@ ja:
               project_title: "製品"
           blog:
             sidebar:
-              tags: "Từ khóa"
+              tags: "タグ"
               newest_blogs: "最新の書き込み"
               categories: "テーマ"
               latest_projects: "最近のプロジェクト"
@@ -144,6 +152,9 @@ ja:
               address: "住所"
               address_info: "L17-11、Vincom Center Buildings、72 Le Thanh Ton、Ben Nghe Ward、District 1、City。ベトナム、ホーチミン市"
               phone: "電話"
+          contact_me:
+            contact__slogan: "ご相談が必要ですか？お気軽にご連絡ください"
+            contact_us: "今すぐ行動する"
           service:
             sidebar:
               other_services: "その他の製品"

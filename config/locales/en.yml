@@ -1,7 +1,8 @@
 en:
   home: "Home"
-  about_us: "Service"
-  service: "Product"
+  about_us: "Story"
+  service: "Service"
+  product: "Product"
   project: "Project"
   blog: "Blog"
   recruitment: "Recruitment"
@@ -50,6 +51,11 @@ en:
           detail:
             service: "Product"
             no_matching_records_found: "Updating..."
+        product:
+          index:
+            product: "Product"
+          detail:
+            product: "Product"
         project:
           index:
             project: "Project"
@@ -72,6 +78,8 @@ en:
           detail:
             blog: "Blog"
             tags: "Tags"
+          related_blog:
+            other_blog: "Related news"
         recruitment:
           index:
             recruitment: "Recruitment"
@@ -137,6 +145,9 @@ en:
               address: "Address"
               address_info: "F17-11, Vincom Center Buildings, 72 Le Thanh Ton, Ben Nghe Ward, District 1, HCMC, Vietnam"
               phone: "Phone"
+          contact_me:
+            contact__slogan: "Need advice? Contact us"
+            contact_us: "Click Now"
           service:
             sidebar:
               other_services: "Other products"
