@@ -81,10 +81,6 @@
     color: var(--red);
 }
 
-.blog-detail-content ul li {
-    font-size: 24px;
-    font-weight: bold;
-}
 
 .blog-detail-content p:empty {
     display: block;
@@ -96,11 +92,4 @@
     border-bottom: 1px solid var(--green);
     font-weight: bold;
     line-height: 3rem;
-}
-
-@media (max-width: 991px) {
-    .blog-detail-content ul li {
-        font-size: 20px;
-        font-weight: 500;
-    }
 }

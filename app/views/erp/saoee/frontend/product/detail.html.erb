@@ -4,31 +4,25 @@
 
 <%
     if I18n.locale == :en
-        product_name = @product.en_name
-        product_content = @product.en_content
         product_image = @product.en_image
     elsif I18n.locale == :ja
-        product_name = @product.ja_name
-        product_content = @product.ja_content
         product_image = @product.ja_image
     else
-        product_name = @product.name
-        product_content = @product.content
         product_image = @product.image
     end
 %>
 
-<% title product_name %>
+<% title article_name(@product) %>
 
 <!-- PAGE HEADING -->
 <section class="section__banner">
     <div class="banner__container container-fluid px-0">
         <div class="banner__image z-0">
-            <%= (image_tag product_image.thumb_870_489, alt: product_name) if product_image.thumb_870_489.present? %>
+            <%= (image_tag product_image.thumb_870_489, alt: article_name(@product)) if product_image.thumb_870_489.present? %>
         </div>
         <div class="banner__container container d-flex align-items-center">
             <h1 class="banner__title fw-bold text-white text-capitalize">
-                <%= product_name %>
+                <%= article_name(@product) %>
             </h1>
         </div>
     </div>
@@ -38,7 +32,7 @@
             <i class="fa-solid fa-angle-right"></i>
             <%= link_to t('product'), erp_saoee.product_path, class: 'fw-semibold text-uppercase text-secondary' %>
             <i class="fa-solid fa-angle-right"></i>
-            <span class="fw-semibold text-uppercase text-red"><%= product_name %></span>
+            <span class="fw-semibold text-uppercase text-red"><%= article_name(@product) %></span>
         </div>
     </div>
 </section>
@@ -49,7 +43,7 @@
     <div class="simulation__container container py-0 py-sm-0 py-md-0 py-lg-5">
         <div class="row">
             <div class="col-12 col-sm-12 col-md-12 col-lg-12">
-                <%= product_content.html_safe %>
+                <%= article_content(@product).html_safe %>
             </div>
         </div>
     </div>

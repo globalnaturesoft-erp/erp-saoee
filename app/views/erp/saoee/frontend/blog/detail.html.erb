@@ -1,17 +1,4 @@
-<%
-    if I18n.locale == :en
-        display_blog_name = @blog.en_name
-        display_blog_content = @blog.en_content
-    elsif I18n.locale == :ja
-        display_blog_name = @blog.ja_name
-        display_blog_content = @blog.ja_content
-    else
-        display_blog_name = @blog.name
-        display_blog_content = @blog.content
-    end
-%>
-
-<% title display_blog_name %>
+<% title article_name(@blog) %>
 <% full_domain_path = request.env['rack.url_scheme'] + '://' + request.host_with_port %>
 
 <% content_for :page_style do %>
@@ -23,33 +10,33 @@
     <!-- Facebook Open Graph -->
     <meta property="og:url" content="<%= request.url %>"/>
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="<%= display_blog_name %>"/>
+    <meta property="og:title" content="<%= article_name(@blog) %>"/>
     <% if @meta_description.present? %>
     <meta property="og:description" content="<%= @meta_description %>"/>
     <% else %>
-    <meta property="og:description" content="<%= display_blog_name %>"/>
+    <meta property="og:description" content="<%= article_name(@blog) %>"/>
     <% end %>
     <meta property="og:site_name" content="SAO-EE.VN">
     <meta property="og:image" content="<%= full_domain_path %><%= @blog.image %>" />
     <meta property="og:locale" content="<%= (I18n.locale == :vi) ? 'vi_VN' : 'en_US' %>">
 
     <!-- Google+ Open Graph -->
-    <meta itemprop="name" content="<%= display_blog_name %>">
+    <meta itemprop="name" content="<%= article_name(@blog) %>">
     <% if @meta_description.present? %>
     <meta itemprop="description" content="<%= @meta_description %>">
     <% else %>
-    <meta itemprop="description" content="<%= display_blog_name %>">
+    <meta itemprop="description" content="<%= article_name(@blog) %>">
     <% end %>
     <meta itemprop="image" content="<%= full_domain_path %><%= @blog.image %>">
 
     <!-- Twitter Open Graph -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@SAOEE">
-    <meta name="twitter:title" content="<%= display_blog_name %>">
+    <meta name="twitter:title" content="<%= article_name(@blog) %>">
     <% if @meta_description.present? %>
     <meta name="twitter:description" content="<%= @meta_description %>"/>
     <% else %>
-    <meta name="twitter:description" content="<%= display_blog_name %>"/>
+    <meta name="twitter:description" content="<%= article_name(@blog) %>"/>
     <% end %>
     <meta name="twitter:image" content="<%= full_domain_path %><%= @blog.image %>">
 <% end %>
@@ -62,7 +49,7 @@
         </div>
         <div class="banner__container container d-flex align-items-center">
             <h1 class="banner__title fw-bold text-white text-capitalize">
-                <%= display_blog_name %>
+                <%= article_name(@blog) %>
             </h1>
         </div>
     </div>
@@ -72,7 +59,7 @@
             <i class="fa-solid fa-angle-right"></i>
             <%= link_to t('blog'), erp_saoee.blog_path, class: 'fw-semibold text-uppercase text-secondary' %>
             <i class="fa-solid fa-angle-right"></i>
-            <span class="fw-semibold text-uppercase text-red"><%= display_blog_name %></span>
+            <span class="fw-semibold text-uppercase text-red"><%= article_name(@blog) %></span>
         </div>
     </div>
 </section>
@@ -83,7 +70,7 @@
     <div class="container blog-detail-content mb-5">
         <div class="row">
             <div class="col-12 col-sm-12 col-md-12 text-justify">
-                <%= display_blog_content.html_safe %>
+                <%= article_content(@blog).html_safe %>
             </div>
         </div>
     </div>
@@ -103,7 +90,7 @@
     </div>
     <div class="container pb-5">
         <div class="row">
-            <%= render 'erp/saoee/frontend/blog/entry_social_share', blog_name: display_blog_name %>
+            <%= render 'erp/saoee/frontend/blog/entry_social_share', blog_name: article_name(@blog) %>
             <%= render 'erp/saoee/frontend/blog/related_blog' %>
         </div>
     </div>

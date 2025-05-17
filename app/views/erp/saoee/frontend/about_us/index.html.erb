@@ -1,4 +1,4 @@
-<% about_name = article_name(@about) %>
+<% about_name = t('about_us') %>
 <% title about_name %>
 <% full_domain_path = request.env['rack.url_scheme'] + '://' + request.host_with_port %>
 
@@ -46,8 +46,6 @@
     <link rel="stylesheet" href="/frontend/css/service.css" />
 <% end %>
 
-<% title t('service') %>
-
 <!-- PAGE HEADING -->
 <section class="section__banner">
     <div class="banner__container container-fluid px-0">
@@ -56,7 +54,7 @@
         </div>
         <div class="banner__container container container--primary d-flex align-items-center">
             <h1 class="banner__title fw-bold text-white text-capitalize">
-                <%= t('.service') %>
+                <%= about_name %>
             </h1>
         </div>
     </div>
@@ -64,86 +62,36 @@
         <div class="nav__container container container--primary d-flex align-items-center text-black-4 fs-6 h-100">
             <i class="fa-solid fa-house"></i>
             <i class="fa-solid fa-angle-right"></i>
-            <span class="text-red fw-semibold text-uppercase"><%= t('.service') %></span>
+            <span class="text-red fw-semibold text-uppercase"><%= about_name %></span>
         </div>
     </div>
 </section>
 <!-- END PAGE HEADING -->
 
-<!-- SERVICE -->
-<% @services.each.with_index(1) do |service, index| %>
-    <%
-        if I18n.locale == :en
-            service_name = service.en_name
-            service_content = service.en_content
-        elsif I18n.locale == :ja
-            service_name = service.ja_name
-            service_content = service.ja_content
-        else
-            service_name = service.name
-            service_content = service.content
-        end
-    %>
-    <% if index.odd? %>
-        <section class="section__assessment-solution--wind sub2 py-5 py-lg-mx bg-black-7 z0">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 px-2">
-                        <div class="d-flex flex-column gap-1">
-                            <h2 class="section__title--2 mt-0 text-start px-0">
-                                <%= service_name %>
-                            </h2>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 px-2">
-                        <p class="section__text--1">
-                            <%= short_text(service_content, 60) %>...
-                        </p>
-                        <a href="<%= service_link(service) %>">
-                            <div
-                                class="call-action d-flex justify-content-center justify-content-lg-start mt-5">
-                                <span><%= t('detail') %></span>
-                                <div
-                                    class="icon-32 icon-red d-flex justify-content-center align-items-center">
-                                    <i class="fa-solid fa-arrow-right"></i>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+<!-- STORY DETAIL-->
+<section class="blog-detail glbg py-5">
+    <div class="container blog-detail-content mb-5">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 text-justify">
+                <%= article_content(@about).html_safe %>
+            </div>
+        </div>
+    </div>
+    <div class="py-3 blbg">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p class="fw-bold fs-12"><%= t('.tags') %></p>
+                    <ul class="tags">
+                        <% @about.get_tags.each_with_index do |tag,index| %>
+                            <li><a href="#"><%= tag %></a></li>
+                        <% end %>
+                    </ul>
                 </div>
             </div>
-        </section>
-    <% else %>
-        <section class="section__thermal-comfort glbgv2 py-5 py-lg-mx bg-black-7 z0">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 px-2">
-                        <p class="section__text--1">
-                            <%= short_text(service_content, 60) %>...
-                        </p>
-                        <a href="<%= service_link(service) %>">
-                            <div
-                                class="call-action d-flex justify-content-center justify-content-lg-start mt-5">
-                                <span><%= t('detail') %></span>
-                                <div
-                                    class="icon-32 icon-red d-flex justify-content-center align-items-center">
-                                    <i class="fa-solid fa-arrow-right"></i>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 px-2">
-                        <div class="d-flex flex-column gap-1">
-                            <h2 class="section__title--2 mt-0 text-end px-0">
-                                <%= service_name %>
-                            </h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    <% end %>
-<% end %>
-<!-- END SERVICE -->
+        </div>
+    </div>
+</section>
+<!-- END STORY DETAIL-->
 
 <%= render 'erp/saoee/frontend/modules/contact_me' %>
